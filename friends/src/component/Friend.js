@@ -1,17 +1,16 @@
 import React from 'react';
-import { Route, Link } from 'react-router-dom';
 
-export default function({name, age, email}) {
+export default function Friend(props) {
     return(
         <div className='card-container'>
             <div>
-                <h2>{name}</h2>
+                <h3>{props.name}</h3>
             </div>
             <div>
-                <h2>{age}</h2>
-            </div>
-            <div>
-                <h2>{email}</h2>
+                <h2>{props.age}</h2>            
+                <h2>{props.email}</h2>
+                <button onClick={e => props.setUpdateForm(e, props.friend)} >Update Friend Info</button>
+                <button onClick={e => props.deleteFriend(e, props.friend.id)}>Delete</button>
             </div>
         </div> 
     )
