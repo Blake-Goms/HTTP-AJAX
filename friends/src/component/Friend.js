@@ -3,7 +3,7 @@ import { Route, Link } from 'react-router-dom';
 
 export default function({name, age, email}) {
     return(
-        <div>
+        <div className='card-container'>
             <div>
                 <h2>{name}</h2>
             </div>

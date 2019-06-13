@@ -3,7 +3,7 @@ import axios from 'axios';
 import { Route, Link } from 'react-router-dom';
 import './App.css';
 import FriendsList from './component/FriendsList';
-import Friend from './component/Friend';
+import Home from './component/Home';
 
 class App extends React.Component {
   constructor() {
@@ -29,9 +29,8 @@ class App extends React.Component {
     return (
       <div className="App">
         {/* {...props} sends the history,match,location to component. Shortcut */}
-        <Link to='/friend' > View Friends </Link>
-        <Route exact path='/'  render={props => <FriendsList {...props} friends={this.state.friends} /> } />
-        <Route path='/friend'  component={Friend} />         
+        <Route exact path="/" component={Home} />
+        <Route path='/friend'  render={props => <FriendsList {...props} friends={this.state.friends} /> } />     
       </div>
     );
   }

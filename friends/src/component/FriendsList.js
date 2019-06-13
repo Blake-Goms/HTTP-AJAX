@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Friend from './Friend'
 
 export default function({friends}) {
@@ -7,9 +7,10 @@ export default function({friends}) {
     <div>
     
     <Link to='/'>Home</Link>
-    {friends.map((friend, index) => (        
+    { friends.map((friend, index) => (  
         <Friend name={friend.name} age={friend.age} email={friend.email} key={index} />        
     ))}
+    
     </div>
     )
 }
