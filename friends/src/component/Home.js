@@ -1,11 +1,11 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react'
+import {Link} from 'react-router-dom'
 
-const Home = (props) => {
-    return (
+export default function Home() {
+    return(
         <div>
-            <Link to='/friend' > View Friends </Link>
+            <h2>Friends List</h2>
+            <Link to='/' component={Home} /> 
         </div>
     )
 }
-export default Home;

@@ -1,20 +1,17 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react'
 import Friend from './Friend'
 
-export default function FriendsList({friends}) {
-    return(
-    <div>
-        <div>
-            <Link to='/'>Home</Link>
-        </div>    
-        <div>
-        <Link to='/friendForm'>Add Friend</Link>
-        </div>     
-    { friends.map((friend, index) => (  
-        <Friend name={friend.name} age={friend.age} email={friend.email} key={index} />        
-    ))}
-    
-    </div>
+export default function FriendsList(props) {
+    return (
+        <>
+        {props.friends.map(friend => 
+        <Friend 
+            friend={friend} 
+            key={friend.id}
+            setUpdateForm={props.setUpdateForm}
+            deleteFriend={props.deleteFriend}
+        />
+        )}
+        </>
     )
 }
